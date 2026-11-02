@@ -1,0 +1,84 @@
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    cursor:url("download-removebg-preview.png"),auto;
+}
+
+.container{
+    text-align:center;
+    color:white;
+}
+
+.welcome span{
+    display:inline-block;
+    opacity:0;
+    position:relative;
+    animation:appear 0.6s forwards;
+    transition:all 0.1s ease-in-out;
+    font-size:180px;
+    font-weight:bold;
+}
+
+.welcome span:nth-child(1){animation-delay:0s;}
+.welcome span:nth-child(2){animation-delay:0.1s;}
+.welcome span:nth-child(3){animation-delay:0.2s;}
+.welcome span:nth-child(4){animation-delay:0.3s;}
+.welcome span:nth-child(5){animation-delay:0.4s;}
+.welcome span:nth-child(6){animation-delay:0.5s;}
+.welcome span:nth-child(7){animation-delay:0.6s;}
+
+@keyframes appear{
+    0%{opacity:0; transform:translateY(20px);}
+    100%{opacity:1; transform:translateY(0);}
+}
+
+.welcome span:hover{
+    animation:glitch 0.4s infinite;
+}
+
+@keyframes glitch{
+    0%{transform:translate(0,0); color:white; text-shadow:none;}
+    20%{transform:translate(-2px,2px); color:#0ff; text-shadow:2px -2px #f0f;}
+    40%{transform:translate(2px,-2px); color:#f0f; text-shadow:-2px 2px #0ff;}
+    60%{transform:translate(-1px,1px); color:#ff0; text-shadow:1px -1px #f00;}
+    80%{transform:translate(1px,-1px); color:#f00; text-shadow:-1px 1px #ff0;}
+    100%{transform:translate(0,0); color:white; text-shadow:none;}
+}
+
+.container input{
+    padding:14px 36px;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:30px;
+    border:none;
+    background:rgba(255,255,255,0.95);
+    color:#003366;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(100,170,255,0.6);
+    transition:transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.container input:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 30px rgba(120,190,255,0.9);
+    background:white;
+}
+
+.container input:active{
+    transform:scale(0.95);
+    box-shadow:0 0 15px rgba(120,190,255,0.5);
+}
